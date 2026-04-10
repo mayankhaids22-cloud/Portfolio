@@ -1,0 +1,147 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(59, 130, 246, 0.2), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(217, 70, 239, 0.2), transparent 35%),
+    #020617;
+  overflow-x: hidden;
+}
+
+:root[data-theme='light'] body {
+  color: #0f172a;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.1), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(192, 38, 211, 0.08), transparent 35%),
+    #e2e8f0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(140deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.35));
+  border-radius: 1rem;
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 0 1px rgba(56, 189, 248, 0.14) inset,
+    0 12px 40px rgba(3, 7, 18, 0.7);
+}
+
+:root[data-theme='light'] .glass-card {
+  border-color: rgba(15, 23, 42, 0.1);
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.8), rgba(241, 245, 249, 0.65));
+  box-shadow:
+    0 0 0 1px rgba(14, 165, 233, 0.12) inset,
+    0 10px 30px rgba(15, 23, 42, 0.14);
+}
+
+.btn-neon,
+.btn-glass {
+  border-radius: 0.8rem;
+  padding: 0.75rem 1.1rem;
+  font-weight: 600;
+  transition: 180ms ease;
+}
+
+.btn-neon {
+  color: #ecfeff;
+  border: 1px solid rgba(103, 232, 249, 0.75);
+  background: linear-gradient(90deg, rgba(8, 145, 178, 0.55), rgba(168, 85, 247, 0.55));
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.45);
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(34, 211, 238, 0.7);
+}
+
+.btn-glass {
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.link-neon {
+  color: #67e8f9;
+  font-weight: 600;
+}
+
+.link-neon:hover {
+  color: #e879f9;
+}
+
+.icon-link {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  border: 1px solid rgba(103, 232, 249, 0.5);
+  background: rgba(6, 182, 212, 0.1);
+  transition: transform 150ms ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.gradient-orb {
+  position: fixed;
+  z-index: -20;
+  filter: blur(80px);
+  border-radius: 999px;
+  opacity: 0.4;
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.gradient-orb-a {
+  top: 12%;
+  left: -6%;
+  width: 16rem;
+  height: 16rem;
+  background: #22d3ee;
+}
+
+.gradient-orb-b {
+  bottom: 8%;
+  right: -4%;
+  width: 17rem;
+  height: 17rem;
+  background: #d946ef;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
