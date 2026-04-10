@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion'
 
+void motion
+
 export default function Navbar({ items, activeSection, theme, toggleTheme }) {
   return (
     <motion.header

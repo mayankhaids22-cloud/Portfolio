@@ -7,6 +7,8 @@ import Navbar from './components/Navbar'
 import SectionTitle from './components/SectionTitle'
 import { navItems, projects, skills, timeline } from './data/portfolioData'
 
+void motion
+
 const fadeUp = {
   hidden: { opacity: 0, y: 25 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
