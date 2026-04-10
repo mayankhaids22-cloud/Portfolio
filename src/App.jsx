@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { FaEnvelope, FaGithub, FaLinkedin, FaPaperPlane } from 'react-icons/fa'
 import Background3D from './components/Background3D'
 import CustomCursor from './components/CustomCursor'
@@ -7,7 +7,6 @@ import Navbar from './components/Navbar'
 import SectionTitle from './components/SectionTitle'
 import { navItems, projects, skills, timeline } from './data/portfolioData'
 
-void motion
 
 const fadeUp = {
   hidden: { opacity: 0, y: 25 },
@@ -82,7 +81,7 @@ function App() {
       <main className="mx-auto w-[min(94%,1100px)] space-y-28 pb-24 pt-28 md:space-y-36">
         {/* Hero section */}
         <section id="hero" className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <motion.div initial="hidden" animate="show" variants={fadeUp}>
+          <Motion.div initial="hidden" animate="show" variants={fadeUp}>
             <p className="mb-3 text-sm uppercase tracking-[0.35em] text-cyan-300">Frontend Developer</p>
             <h1 className="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
               Crafting immersive digital worlds in neon motion.
@@ -99,9 +98,9 @@ function App() {
                 Contact Me
               </a>
             </div>
-          </motion.div>
+          </Motion.div>
 
-          <motion.div
+          <Motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -113,14 +112,14 @@ function App() {
               className="h-[420px] w-full rounded-2xl object-cover"
               loading="lazy"
             />
-          </motion.div>
+          </Motion.div>
         </section>
 
         {/* About section */}
         <section id="about" className="space-y-10">
           <SectionTitle title="About Me" subtitle="Who I Am" />
           <div className="grid gap-6 lg:grid-cols-2">
-            <motion.article
+            <Motion.article
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -131,8 +130,8 @@ function App() {
                 I’m a creative developer blending engineering and design to ship meaningful digital
                 products. My focus is on performance, accessibility, and memorable interfaces.
               </p>
-            </motion.article>
-            <motion.article
+            </Motion.article>
+            <Motion.article
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -149,7 +148,7 @@ function App() {
                       <span>{skill.level}%</span>
                     </div>
                     <div className="h-2 overflow-hidden rounded-full bg-white/10">
-                      <motion.div
+                      <Motion.div
                         className="h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-fuchsia-500"
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -160,7 +159,7 @@ function App() {
                   </div>
                 ))}
               </div>
-            </motion.article>
+            </Motion.article>
           </div>
         </section>
 
@@ -186,7 +185,7 @@ function App() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {filteredProjects.map((project, idx) => (
-              <motion.article
+              <Motion.article
                 key={project.title}
                 className="glass-card overflow-hidden"
                 variants={fadeUp}
@@ -223,7 +222,7 @@ function App() {
                     </a>
                   </div>
                 </div>
-              </motion.article>
+              </Motion.article>
             ))}
           </div>
         </section>
@@ -233,7 +232,7 @@ function App() {
           <SectionTitle title="Experience" subtitle="Timeline" />
           <div className="relative ml-3 border-l border-cyan-300/30 pl-6">
             {timeline.map((item, idx) => (
-              <motion.article
+              <Motion.article
                 key={item.period}
                 className="glass-card mb-6 p-5"
                 variants={fadeUp}
@@ -248,7 +247,7 @@ function App() {
                 <h3 className="text-lg font-semibold text-white">{item.role}</h3>
                 <p className="mb-2 text-fuchsia-200">{item.company}</p>
                 <p className="text-slate-300">{item.description}</p>
-              </motion.article>
+              </Motion.article>
             ))}
           </div>
         </section>
@@ -257,7 +256,7 @@ function App() {
         <section id="contact" className="space-y-8">
           <SectionTitle title="Let’s Build Something" subtitle="Contact" />
           <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr]">
-            <motion.form
+            <Motion.form
               action="https://formspree.io/f/your-form-id"
               method="POST"
               className="glass-card space-y-4 p-6"
@@ -295,9 +294,9 @@ function App() {
               <button type="submit" className="btn-neon inline-flex items-center gap-2">
                 <FaPaperPlane /> Send Message
               </button>
-            </motion.form>
+            </Motion.form>
 
-            <motion.aside
+            <Motion.aside
               variants={fadeUp}
               initial="hidden"
               whileInView="show"
@@ -319,7 +318,7 @@ function App() {
                   <FaLinkedin />
                 </a>
               </div>
-            </motion.aside>
+            </Motion.aside>
           </div>
         </section>
       </main>

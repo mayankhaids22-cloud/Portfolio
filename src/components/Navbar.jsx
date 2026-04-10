@@ -1,10 +1,9 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
-void motion
 
 export default function Navbar({ items, activeSection, theme, toggleTheme }) {
   return (
-    <motion.header
+    <Motion.header
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       className="fixed inset-x-0 top-0 z-40 mx-auto mt-4 w-[min(95%,1100px)] rounded-2xl border border-white/15 bg-slate-950/55 px-4 py-3 backdrop-blur-xl"
@@ -37,6 +36,6 @@ export default function Navbar({ items, activeSection, theme, toggleTheme }) {
           {theme === 'dark' ? 'Light' : 'Dark'}
         </button>
       </nav>
-    </motion.header>
+    </Motion.header>
   )
 }

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 
-void motion
 
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 })
@@ -30,8 +29,8 @@ export default function CustomCursor() {
   }, [])
 
   return (
-    <motion.div
-      aria-hidden
+    <Motion.div
+      aria-hidden="true"
       animate={{
         x: position.x - 12,
         y: position.y - 12,
